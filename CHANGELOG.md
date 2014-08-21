@@ -1,3 +1,7 @@
+# 0.2.4
+
+* adding options attributes for s3cmd
+
 # 0.2.3
 
 * Updates to not conflict with Chef

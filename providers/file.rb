@@ -4,7 +4,8 @@ action :download do
   cmd = Download.new.command :file_name   => file_name,
                              :bucket      => new_resource.bucket,
                              :object_name => new_resource.object_name,
-                             :force       => new_resource.force
+                             :force       => new_resource.force,
+                             :options     => new_resource.options
 
   execute "Downloading from s3 with cmd: '#{cmd}'" do
     command cmd
@@ -29,7 +30,8 @@ action :upload do
                            :bucket      => new_resource.bucket,
                            :object_name => new_resource.object_name,
                            :acl_public  => new_resource.acl_public,
-                           :force       => new_resource.force
+                           :force       => new_resource.force,
+                           :options     => new_resource.options
 
 
   execute "Uploading to S3 with cmd: '#{cmd}'" do
